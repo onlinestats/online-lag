@@ -2,26 +2,30 @@ function Lag (l) {
   var values = []
   var n = 0
 
-  function lag (y) {
-    if ((l > 0) && (typeof y !== 'undefined')) {
-      if (Array.isArray(y)) {
-        y.forEach(function (v) {
+  function lag (x) {
+    if ((l > 0) && (typeof x !== 'undefined')) {
+      if (Array.isArray(x)) {
+        x.forEach(function (v) {
           lag(v)
         })
       } else {
         n += 1
         if (values.length === 0) {
-          values.push(y)
+          values.push(x)
         } else {
           var lim = Math.min(values.length, l - 1)
           for (var i = lim; i > 0; i--) {
             values[i] = values[i - 1]
           }
-          values[0] = y
+          values[0] = x
         }
       }
     }
     return values
+  }
+
+  lag.fit = function (x) {
+    lag(x)
   }
 
   Object.defineProperty(lag, 'values', {

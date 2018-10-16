@@ -1,6 +1,6 @@
 {
   "name": "online-lag",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Stores last N values of a data stream",
   "main": "index.js",
   "scripts": {

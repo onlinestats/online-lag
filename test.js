@@ -18,7 +18,7 @@ test('Lag(N<1) or Lag(not number) always give empty array', _ => {
 test('Lag(N=5)', _ => {
   var l1 = Lag(5)
   ;[1, 2, 3, 4, 5, 6, 7, 8, 9].forEach(v => {
-    l1(v)
+    l1.fit(v)
   })
   _.deepEqual(l1.values, [9, 8, 7, 6, 5])
   _.equal(l1.n, 9)
