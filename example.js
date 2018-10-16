@@ -1,4 +1,4 @@
-const Lag = require('./lag.js')
+const Lag = require('.')
 
 const l = Lag(4)
 
